@@ -52,7 +52,7 @@ You should be able to guess the encoding with help of the input files in the dir
 
 ## What you can win
 
-We will reward the best submission (as seen by us) with an [iPad mini Wi-Fi 16GB](http://www.apple.com/de/ipad-mini/overview/). Since good is always a matter of taste, we want to let you know some things we like in good software. We like readable, elegant, tested software. We like automated builds. We like [git](http://git-scm.com).
+We will reward the best submission (as seen by us) with an [iPad mini Wi-Fi 16GB](http://www.apple.com/ipad-mini/overview/). Since good is always a matter of taste, we want to let you know some things we like in good software. We like readable, elegant, tested software. We like automated builds. We like [git](http://git-scm.com).
 
 ## How to participate
 
