@@ -20,7 +20,7 @@ Ihr solltet in der Lage sein, die Kodierung anhand der Eingabedateien in [input]
 
 Einsendeschluss ist **Mitternacht des 23. Juni 2013**.  
   
-Um eine Lösung abzugeben, macht entweder hier auf [Github](https://github.com/consistec/connect2013) einen Pull-Request auf oder schickt uns eine E-Mail (mit einem einzigen gepackten tar oder zip Anhang) an [connect2013@consistec.de](mailto:connect2013@consistec.de). 
+Um eine Lösung abzugeben, macht entweder hier auf [Github](https://github.com/consistec/connect2013) einen Pull-Request auf oder schickt uns eine E-Mail (mit einem einzigen gepackten tar oder zip Anhang) an [htw2013@consistec.de](mailto:htw2013@consistec.de). 
   
 Die Beispieldateien und diese Readme-Datei findet ihr [hier](https://github.com/consistec/connect2013/archive/master.zip).   
   
@@ -58,7 +58,7 @@ We will reward the best submission (as seen by us) with an [iPad mini Wi-Fi 16GB
 
 Submissions are taken in to account until **Midnight June, 23rd 2013**.  
   
-In order to submit your solution either send us a pull request here on [Github](https://github.com/consistec/connect2013) or send us an email (with a single packaged tar or zip attachment) to [connect2013@consistec.de](mailto:connect2013@consistec.de).  
+In order to submit your solution either send us a pull request here on [Github](https://github.com/consistec/connect2013) or send us an email (with a single packaged tar or zip attachment) to [htw2013@consistec.de](mailto:htw2013@consistec.de).  
   
 You can download the example files and this readme from [here](https://github.com/consistec/connect2013/archive/master.zip).  
   
