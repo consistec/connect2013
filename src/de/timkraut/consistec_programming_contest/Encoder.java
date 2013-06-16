@@ -21,6 +21,7 @@ import java.io.*;
  *
  * @author Tim Kraut
  */
+// TODO Refactor!!
 public final class Encoder {
     // Error constants
     private static final String ERR_NO_INPUT_FILE           = "No input file name given.\n";
@@ -159,4 +160,8 @@ public final class Encoder {
             FileHandler.writeFile(fileContent, outputFileNames[i]);
         }
     }
+
+    /**
+     * Encodes a given
+     */
 }

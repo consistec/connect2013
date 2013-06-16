@@ -1,6 +1,8 @@
 package de.timkraut.consistec_programming_contest;
 
 import java.io.*;
+import static de.timkraut.consistec_programming_contest.ObjectNullException.*;
+import static de.timkraut.consistec_programming_contest.StringEmptyException.*;
 
 /**
  * Read and write files, check if they're valid.
@@ -12,8 +14,7 @@ public final class FileHandler {
     private static final String ERR_FILE_NOT_EXISTING = " is not existing.\n";
     private static final String ERR_FILE_NOT_REGULAR  = " is not a regular file.\n";
     private static final String ERR_FILE_NOT_READABLE = " is not readable..\n";
-    private static final String ERR_OBJ_IS_NULL       = " is null.\n";
-    private static final String ERR_STRING_IS_EMPTY   = " is an empty string.\n";
+
     // Other constants
     private static final int    EOF                   = -1;
 
@@ -62,32 +63,6 @@ public final class FileHandler {
     }
 
     /**
-     * Throws an exception if the given object is null.
-     *
-     * @param obj Object to check.
-     *
-     * @throws ObjectNullException Given object is null.
-     */
-    private static void checkNotNull(Object obj) throws ObjectNullException {
-        if (obj == null) {
-            throw new ObjectNullException(obj + ERR_OBJ_IS_NULL);
-        }
-    }
-
-    /**
-     * Throws an exception if the given string is empty.
-     *
-     * @param string String to check.
-     *
-     * @throws StringEmptyException Given string is empty.
-     */
-    private static void checkNotEmpty(String string) throws StringEmptyException {
-        if (string.trim().isEmpty()) {
-            throw new StringEmptyException(string + ERR_STRING_IS_EMPTY);
-        }
-    }
-
-    /**
      * Throws an exception if the file doesn't point to an existing, regular or readable file.
      *
      * @param file File to check.
@@ -118,7 +93,7 @@ public final class FileHandler {
      */
     public static String readFile(String inputFileName) throws ObjectNullException, StringEmptyException, FileNotFoundException, FileNotRegularException, FileNotReadableException, IOException {
         checkNotNull(inputFileName);
-        checkNotEmpty(inputFileName);
+        checkStringNotEmpty(inputFileName);
 
         File inputFile = new File(inputFileName);
         checkValidFile(inputFile);
@@ -137,18 +112,18 @@ public final class FileHandler {
      */
     private static String readFileContent(File file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(file));
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
 
         int curChar;
 
-        // Read and encode every character
+        // Read the content of the file
         while ((curChar = reader.read()) != EOF) {
-            sb.append(ConsistecAlgorithm.encodeChar((char) curChar));
+            stringBuilder.append(curChar);
         }
 
         reader.close();
 
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
     /**
@@ -165,10 +140,10 @@ public final class FileHandler {
      */
     public static void writeFile(String content, String outputFileName) throws ObjectNullException, StringEmptyException, IOException {
         checkNotNull(content);
-        checkNotEmpty(content);
+        checkStringNotEmpty(content);
 
         checkNotNull(outputFileName);
-        checkNotEmpty(outputFileName);
+        checkStringNotEmpty(outputFileName);
 
         File outputFile = new File(outputFileName);
         writeFileContent(content, outputFile);

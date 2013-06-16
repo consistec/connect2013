@@ -1,18 +1,24 @@
 package de.timkraut.consistec_programming_contest;
 
+import static de.timkraut.consistec_programming_contest.ObjectNullException.*;
+
 /**
  * Encode characters according to the algorithm refactored from the sample files.
  *
  * @author Tim Kraut
  */
 public final class ConsistecAlgorithm {
+    // Other constants
+    private static final int VALUE_INITIAL = 0;
+    private static final int EOS           = -1; // End of string
+
     /**
      * Prevent instantiating.
      */
     private ConsistecAlgorithm() {}
 
     /**
-     * Encodes the given string according to the following algorithm: <h1>Upper case characters</h1>
+     * Encodes a single character according to the following algorithm: <h1>Upper case characters</h1>
      * <pre>
      * A   = ASCII value + 12
      * B-M = ASCII value - 1
@@ -27,22 +33,15 @@ public final class ConsistecAlgorithm {
      * p-z = ASCII value - 2
      * </pre>
      *
-     * @param string String to encode.
-     *
-     * @return Encoded string.
-     */
-    public static String encode(String string) {
-        // TODO Read character by character
-    }
-
-    /**
-     * Encodes a single character.
-     *
      * @param character Character to encode.
      *
      * @return Encoded character.
+     *
+     * @throws ObjectNullException Given character is null.
      */
-    private static int encodeChar(char character) {
+    public static int encodeChar(char character) throws ObjectNullException {
+        checkNotNull(character);
+
         int ascii = (int) character;
 
         if ((ascii >= 65) && (ascii <= 90)) {

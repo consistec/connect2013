@@ -1,7 +1,7 @@
 package de.timkraut.consistec_programming_contest;
 
 /**
- * A file that is not readable.
+ * A file is not readable.
  *
  * @author Tim Kraut
  */
