@@ -62,6 +62,8 @@ sein, die dann mit der Ausgabedatei vergleichen wird. Das Programm gibt dann als
 wenn die Dateien gleich sind, dass die Verschluesselung erfolgreich war und bei Unterschieden,
 dass die Verschluesselung nicht erfolgreich war.
 
+Die Ausgabe von lorem_ipsum befindet sich unter src/result.
+
 
 Konatkt:
 Moritz Fey
