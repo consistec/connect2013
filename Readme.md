@@ -1,10 +1,10 @@
-#Uebersetzen der Programme
+##Uebersetzen der Programme
 Zum uebersetzen der Programm muss zuerst in den Ordner src gewechselt werden mit
 ```
 cd src
 ```
 
-##Uebersetzen des encoder Programms:
+####Uebersetzen des encoder Programms:
 ```
 make encoder
 ```
@@ -13,7 +13,7 @@ Syntax des Programms:
 encoder [EINGABEDATEI] [AUSGABEDATEI]
 ```
 
-##Uebersetzen des Testprogramms:
+####Uebersetzen des Testprogramms:
 ```
 make encoderTest
 ```
@@ -22,7 +22,7 @@ Syntax des Programms:
 encoderTest [EINGABEDATEI] [AUSGABEDATEI]
 ```
 
-##Uebersetzen des decoder Programms:
+####Uebersetzen des decoder Programms:
 ```
 make decoder
 ```
@@ -31,7 +31,7 @@ Syntax des Programms:
 decoder [EINGABEDATEI] [AUSGABEDATEI]
 ```
 
-##Uebersetzen des kombinierten encoder_decoder Programms:
+####Uebersetzen des kombinierten encoder_decoder Programms:
 ```
 make encoder_decoder
 ```
@@ -40,12 +40,12 @@ Syntax des Programms:
 encoder_decoder [EINGABEDATEI] [AUSGABEDATEI]
 ```
 
-##Uebersetzen aller Programme:
+####Uebersetzen aller Programme:
 ```
 make all
 ```
 
-##Loeschen der Objektdateien
+####Loeschen der Objektdateien
 ```
 make clean
 ```
