@@ -18,7 +18,8 @@ public final class ConsistecAlgorithm {
     private ConsistecAlgorithm() {}
 
     /**
-     * Encodes a single character according to the following algorithm: <h1>Upper case characters</h1>
+     * Encodes a single character according to the following algorithm:
+     * <h1>Upper case characters</h1>
      * <pre>
      * A   = ASCII value + 12
      * B-M = ASCII value - 1
@@ -39,9 +40,8 @@ public final class ConsistecAlgorithm {
      *
      * @throws ObjectNullException Given character is null.
      */
-    public static int encodeChar(char character) throws ObjectNullException {
-        checkNotNull(character);
-
+    // TODO Check if character can be null?
+    public static int encodeChar(char character) {
         int ascii = (int) character;
 
         if ((ascii >= 65) && (ascii <= 90)) {
