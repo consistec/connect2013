@@ -3,14 +3,16 @@ package de.timkraut.consistec_programming_contest;
 import java.io.*;
 
 /**
- * <p>Reads (multiple) input and output files and encodes every character.</p> <p>The encoding follows this
- * algorithm:</p> <p/> <h1>Upper case characters</h1>
+ * <p>Reads (multiple) input and output files and encodes every character according to the following algorithm:</p>
+ *
+ * <h1>Upper case characters</h1>
  * <p><pre>
  * A   = ASCII value + 12
  * B-M = ASCII value - 1
  * N-Y = ASCII value + 1
  * Z   = ASCII value - 12
  * </pre></p>
+ *
  * <h1>Lower case characters</h1>
  * <p><pre>
  * a-k = ASCII value + 2
@@ -21,14 +23,15 @@ import java.io.*;
  *
  * @author Tim Kraut
  */
-// TODO Refactor!!
 public final class Encoder {
     // Error constants
     private static final String ERR_NO_INPUT_FILE           = "No input file name given.\n";
     private static final String ERR_NO_OUTPUT_FILE          = "No output file name given.\n";
     private static final String ERR_NOT_ENOUGH_OUTPUT_FILES = "Not enough file names given. Every input file name needs a output file name.\n";
+
     // Text constants
     private static final String START_INSTRUCTION           = "Start the encoder with: encoder [inputFile_1] [outputFile_1] [inputFile_2] [outputFile_2] ... ";
+
     private String[] inputFileNames;
     private String[] outputFileNames;
 
@@ -36,7 +39,7 @@ public final class Encoder {
      * Prevent instantiating.
      */
     private Encoder(String[] fileNames) {
-        // Split and save input and output file names
+        // Split and save input and output file names separately
         setInputOutputFileNames(fileNames);
     }
 
@@ -95,7 +98,6 @@ public final class Encoder {
      * @throws MissingArgumentsException No output file given.
      * @throws MissingArgumentsException Not enough output files. Every input file needs a corresponding output file.
      */
-
     private static void checkValidNumArguments(int num) throws MissingArgumentsException {
         // Check if input file name given
         if (num < 1) {
@@ -160,8 +162,4 @@ public final class Encoder {
             FileHandler.writeFile(fileContent, outputFileNames[i]);
         }
     }
-
-    /**
-     * Encodes a given
-     */
 }
