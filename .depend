@@ -1,2 +1,0 @@
-abstand.o: abstand.cpp
-encoder.o: encoder.cpp
