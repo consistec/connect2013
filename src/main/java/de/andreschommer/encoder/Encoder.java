@@ -4,7 +4,9 @@ public class Encoder {
 
 	/**
 	 * Encodes the given string
-	 * @param string - String to encode
+	 * 
+	 * @param string
+	 *            - String to encode
 	 * @return the encoded version of the string
 	 */
 	public String encode(final String string) {
@@ -24,7 +26,15 @@ public class Encoder {
 
 	/**
 	 * Encodes the given uppercase character
-	 * @param letter - the character to encode
+	 * <ul>
+	 * <li>[B-M] -> -1</li>
+	 * <li>[N-Y] -> +1</li>
+	 * <li>[A] -> [M]</li>
+	 * <li>[Z] -> [N]</li>
+	 * </ul>
+	 * 
+	 * @param letter
+	 *            - the character to encode
 	 * @return the encoded version of the character
 	 */
 	private char encodeUppercaseLetter(char letter) {
@@ -42,7 +52,15 @@ public class Encoder {
 
 	/**
 	 * Encodes the given lowercase character
-	 * @param letter - the lowercase character to encode
+	 * <ul>
+	 * <li>[a-k] -> +2</li>
+	 * <li>[p-z] -> -2</li>
+	 * <li>[l-m] -> -11</li>
+	 * <li>[n-o] -> +11</li>
+	 * </ul>
+	 * 
+	 * @param letter
+	 *            - the lowercase character to encode
 	 * @return the encoded version of the character
 	 */
 	private char encodeLowercaseLetter(char letter) {

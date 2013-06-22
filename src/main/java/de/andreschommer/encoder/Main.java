@@ -33,7 +33,6 @@ public class Main {
 			main.encodeFile(inputFile, outputFile);
 		} catch (IOException e) {
 			System.err.println(e.toString());
-//			e.printStackTrace();
 			main.usage();
 		}
 	}

@@ -1,8 +1,8 @@
 ##HTW Connect Programmierwettbewerb##
 
-###Übersetzen des Programms###
+###Uebersetzen des Programms###
 
-Um das Programm zu Übersetzen muss [Maven][] auf dem System installiert sein.
+Um das Programm zu Uebersetzen muss [Maven][] auf dem System installiert sein.
 
 1. Zum Quellcode navigieren:
 
@@ -12,22 +12,22 @@ Um das Programm zu Übersetzen muss [Maven][] auf dem System installiert sein.
 	
 		mvn clean package
 
-Maven lädt nun die benötigten Bibliotheken herunter und generiert eine JAR-Datei mit dem Namen **encoder.jar**.
+Maven laedt nun die benoetigten Bibliotheken herunter und generiert eine JAR-Datei mit dem Namen **encoder.jar** im Verzeichnis **target**.
 
-###Ausführen des Programms###
+###Ausfuehren des Programms###
 
-Das Programm kann nach dem kompilieren wie folgt ausgeführt werden:
+Das Programm kann nach dem kompilieren wie folgt ausgefuehrt werden:
 
 	java -jar encoder.jar inputFile.txt outputFile.txt
 
 ###Hinweise###
 
-* Die Unit-Tests können wie folgt gestartet werden:  
+* Die Unit-Tests koennen wie folgt gestartet werden:  
 
 		cd /path/to/src/folder
 		mvn test
 
-* Als Eingabedatei können (mit Absicht) nur Dateien im ASCII-Format genutzt werden, da nur für diese eine Codierung vorgegeben wurde. 
+* Als Eingabedatei koennen (mit Absicht) nur Dateien im ASCII-Format genutzt werden, da nur fuer diese eine Codierung vorgegeben wurde. 
 
 ###Kontakt###
 
