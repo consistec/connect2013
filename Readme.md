@@ -1,76 +1,37 @@
-# HTW Connect Programmierwettbewerb
+##HTW Connect Programmierwettbewerb##
 
-![The 1st Prize](http://images.apple.com/ipad-mini/overview/images/hero.jpg)
+###Übersetzen des Programms###
 
-_[English Version below](#english-version)_
+Um das Programm zu Übersetzen muss [Maven][] auf dem System installiert sein.
 
-## Was wir erwarten
+1. Zum Quellcode navigieren:
 
-Wir wollen, dass ihr einen Textkodierer schreibt. Das Programm sollte eine Eingabedatei einlesen und den kodierten Text in eine Ausgabedatei schreiben. Der Programmaufruf sollte so aussehen:
+		cd /path/to/src/folder
 
-    encoder input.txt output.txt
+2. Das Projekt "bauen"
+	
+		mvn clean package
 
-Ihr solltet in der Lage sein, die Kodierung anhand der Eingabedateien in [input](/input/) und der zugehÃ¶rigen Ausgabedateien in [output](/output/) zu erraten. Das Namensschema der Dateien ist einfach gehalten ;)
+Maven lädt nun die benötigten Bibliotheken herunter und generiert eine JAR-Datei mit dem Namen **encoder.jar**.
 
-## Was kann man gewinnen
-  
- Wir werden der (unserer Meinung nach) besten Einsendung ein [iPad mini Wi-Fi 16GB](http://www.apple.com/de/ipad-mini/overview/) Ã¼berreichen. Da gut immer relativ ist, hier einen kleinen Einblick in das was wir als gut erachten. Wir mÃ¶gen leserliche, elegante, getestete Software. Wir mÃ¶gen automatische Buildsysteme. Wir mÃ¶gen [git](http://git-scm.com).
+###Ausführen des Programms###
 
-## Wie nimmt man teil
+Das Programm kann nach dem kompilieren wie folgt ausgeführt werden:
 
-Einsendeschluss ist **Mitternacht des 23. Juni 2013**.  
-  
-Um eine LÃ¶sung abzugeben, macht entweder hier auf [Github](https://github.com/consistec/connect2013) einen Pull-Request auf oder schickt uns eine E-Mail (mit einem einzigen gepackten tar oder zip Anhang) an [htw2013@consistec.de](mailto:htw2013@consistec.de). 
-  
-Die Beispieldateien und diese Readme-Datei findet ihr [hier](https://github.com/consistec/connect2013/archive/master.zip).   
-  
-Eure LÃ¶sung muss enthalten:
+	java -jar encoder.jar inputFile.txt outputFile.txt
 
--  den kompletten Code um das Binary zu kompilieren
--  eine Art Skript mit dem man das Binary automatisch bauen kann (sowas wie make, ant, maven, rake, etc.)
--  die Ausgabedatei eures encoders aus der Eingabe [lorem_ipsum.txt](/input/lorem_ipsum.txt)
--  anderer Code der geschrieben wurde um die Implementierung zu unterstÃ¼tzen (sowas wie _Tests_)
--  eine Readme-Datei in der steht wie der Code zu kompilieren ist und mit euren **Kontaktinformationen** (E-Mail oder so)
+###Hinweise###
 
-Was wir nicht fordern:
+* Die Unit-Tests können wie folgt gestartet werden:  
 
--  eine bestimmte Programmiersprache
--  ein kompiliertes Binary
-  
-____
-#### English Version
+		cd /path/to/src/folder
+		mvn test
 
-# HTW Connect Programming Contest
-  
-## What we expect
+* Als Eingabedatei können (mit Absicht) nur Dateien im ASCII-Format genutzt werden, da nur für diese eine Codierung vorgegeben wurde. 
 
-We want you to write a text encoder. The program should read an input file and write the encoded content to an output file. The program call should look something like:
+###Kontakt###
 
-    encoder input.txt output.txt
+Name: André Schommer  
+EMail: [andre.schommer@googlemail.com](mailto:andre.schommer@googlemail.com)
 
-You should be able to guess the encoding with help of the input files in the directory [input](/input/) and the corresponding output files in [output](/output/). The naming schema of these files is easy ;)
-
-## What you can win
-
-We will reward the best submission (as seen by us) with an [iPad mini Wi-Fi 16GB](http://www.apple.com/ipad-mini/overview/). Since good is always a matter of taste, we want to let you know some things we like in good software. We like readable, elegant, tested software. We like automated builds. We like [git](http://git-scm.com).
-
-## How to participate
-
-Submissions are taken in to account until **Midnight June, 23rd 2013**.  
-  
-In order to submit your solution either send us a pull request here on [Github](https://github.com/consistec/connect2013) or send us an email (with a single packaged tar or zip attachment) to [htw2013@consistec.de](mailto:htw2013@consistec.de).  
-  
-You can download the example files and this readme from [here](https://github.com/consistec/connect2013/archive/master.zip).  
-  
-Your solution should contain:
-
--  the complete code needed to compile the encoder binary
--  some kind of script used to automatically build the binary (like make, ant, maven, rake, etc.)
--  the output from your encoder based on the [lorem_ipsum.txt](/input/lorem_ipsum.txt) file
--  all other code you wrote supporting the implementation (read _tests_)
--  a readme on how to compile the binary **with a way to contact you** (email or something)  
-  
-What we do not require:
-
--  a certain programming language
--  a compiled binary
+ [Maven]: <http://maven.apache.org/download.cgi> "Maven Download Page"
