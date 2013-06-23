@@ -8,7 +8,7 @@ Ich hoffe, die 3 Dateien ([encoder.properties](/encoder.properties), [encoder.xm
 # Ausgabedatei
 Die Ausgabedatei von [lorem_ipsum.txt](/input/lorem_ipsum.txt) ist [output_lorem_ipsum.txt](/output/output_lorem_ipsum.txt) im Ordner [output](/output/).
 
-# Tests
+# Tests (JUnit 4)
 Die Unit-Tests liegen im Ordner [tests](/tests/).
 
 # Kontaktinformationen
