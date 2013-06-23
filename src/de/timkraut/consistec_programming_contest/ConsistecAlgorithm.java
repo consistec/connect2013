@@ -6,10 +6,6 @@ package de.timkraut.consistec_programming_contest;
  * @author Tim Kraut
  */
 public final class ConsistecAlgorithm {
-    // Other constants
-    private static final int VALUE_INITIAL = 0;
-    private static final int EOS           = -1; // End of string
-
     /**
      * Prevent instantiating.
      */
@@ -56,7 +52,6 @@ public final class ConsistecAlgorithm {
      *
      * @return Encoded character.
      */
-    // TODO Check if character can be null?
     private static int encodeChar(char character) {
         int ascii = (int) character;
 

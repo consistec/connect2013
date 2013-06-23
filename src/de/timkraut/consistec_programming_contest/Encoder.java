@@ -60,7 +60,7 @@ public final class Encoder {
             System.err.println(START_INSTRUCTION);
 
         } catch (ObjectNullException e) {
-            //System.err.println(e);
+            System.err.println(e);
 
 
         } catch (StringEmptyException e) {
@@ -80,11 +80,11 @@ public final class Encoder {
 
 
         } catch (IOException e) {
-            //System.err.println(e);
+            System.err.println(e);
 
 
         } catch (Exception e) {
-            //System.err.println(e);
+            System.err.println(e);
 
         }
     }

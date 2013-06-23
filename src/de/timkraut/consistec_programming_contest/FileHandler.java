@@ -118,7 +118,7 @@ public final class FileHandler {
 
         // Read the content of the file
         while ((curChar = reader.read()) != EOF) {
-            stringBuilder.append(curChar);
+            stringBuilder.append((char) curChar);
         }
 
         reader.close();
@@ -161,5 +161,7 @@ public final class FileHandler {
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 
         writer.write(content);
+
+        writer.close();
     }
 }
