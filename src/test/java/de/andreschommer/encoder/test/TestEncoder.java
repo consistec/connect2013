@@ -39,6 +39,6 @@ public class TestEncoder {
 
 	@Test
 	public void testEncodeWithSpecialCharacters() {
-		assertThat(encoder.encode("!\"§$%&/()=?\\*+'#-_:.;,<>|^°0123456789"), is("!\"§$%&/()=?\\*+'#-_:.;,<>|^°0123456789"));
+		assertThat(encoder.encode("!\"$%&/()=?\\*+'#-_:.;,<>|^~0123456789"), is("!\"$%&/()=?\\*+'#-_:.;,<>|^~0123456789"));
 	}
 }
