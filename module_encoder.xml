@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_encoder" default="compile.module.encoder">
+  <dirname property="module.encoder.basedir" file="${ant.file.module_encoder}"/>
+  
+  <property name="module.jdk.home.encoder" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.encoder" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.encoder" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.encoder" value="${compiler.args}"/>
+  
+  <property name="encoder.output.dir" value="${module.encoder.basedir}/out/production/Encoder"/>
+  <property name="encoder.testoutput.dir" value="${module.encoder.basedir}/out/test/Encoder"/>
+  
+  <path id="encoder.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="encoder.module.production.classpath">
+    <path refid="${module.jdk.classpath.encoder}"/>
+    <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
+    <fileset dir="${basedir}/../../../../../../../apache-maven-3.0.5/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="encoder.runtime.production.module.classpath">
+    <pathelement location="${encoder.output.dir}"/>
+    <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
+    <fileset dir="${basedir}/../../../../../../../apache-maven-3.0.5/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="encoder.module.classpath">
+    <path refid="${module.jdk.classpath.encoder}"/>
+    <pathelement location="${encoder.output.dir}"/>
+    <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
+    <fileset dir="${basedir}/../../../../../../../apache-maven-3.0.5/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="encoder.runtime.module.classpath">
+    <pathelement location="${encoder.testoutput.dir}"/>
+    <pathelement location="${encoder.output.dir}"/>
+    <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
+    <fileset dir="${basedir}/../../../../../../../apache-maven-3.0.5/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.encoder">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.encoder">
+    <patternset refid="excluded.from.module.encoder"/>
+  </patternset>
+  
+  <path id="encoder.module.sourcepath">
+    <dirset dir="${module.encoder.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  <path id="encoder.module.test.sourcepath">
+    <dirset dir="${module.encoder.basedir}">
+      <include name="tests"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.encoder" depends="compile.module.encoder.production,compile.module.encoder.tests" description="Compile module Encoder"/>
+  
+  <target name="compile.module.encoder.production" depends="register.custom.compilers" description="Compile module Encoder; production classes">
+    <mkdir dir="${encoder.output.dir}"/>
+    <javac2 destdir="${encoder.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.encoder}/javac">
+      <compilerarg line="${compiler.args.encoder}"/>
+      <bootclasspath refid="encoder.module.bootclasspath"/>
+      <classpath refid="encoder.module.production.classpath"/>
+      <src refid="encoder.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.encoder"/>
+    </javac2>
+    
+    <copy todir="${encoder.output.dir}">
+      <fileset dir="${module.encoder.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.encoder.tests" depends="register.custom.compilers,compile.module.encoder.production" description="compile module Encoder; test classes" unless="skip.tests">
+    <mkdir dir="${encoder.testoutput.dir}"/>
+    <javac2 destdir="${encoder.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.encoder}/javac">
+      <compilerarg line="${compiler.args.encoder}"/>
+      <bootclasspath refid="encoder.module.bootclasspath"/>
+      <classpath refid="encoder.module.classpath"/>
+      <src refid="encoder.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.encoder"/>
+    </javac2>
+    
+    <copy todir="${encoder.testoutput.dir}">
+      <fileset dir="${module.encoder.basedir}/tests">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.encoder" description="cleanup module">
+    <delete dir="${encoder.output.dir}"/>
+    <delete dir="${encoder.testoutput.dir}"/>
+  </target>
+</project>
