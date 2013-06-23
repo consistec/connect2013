@@ -1,76 +1,85 @@
-# HTW Connect Programmierwettbewerb
+# Einsendung für Consistec HTW Connect2013 Programmierwettbewerb
 
-![The 1st Prize](http://images.apple.com/ipad-mini/overview/images/hero.jpg)
+##Info
+Hallo, ich habe mich für eine OOP C++ Lösung Entschieden mit 7 verschiedenen Klassen welche jede
+eine eigene Funktionalität abdeckt.
 
-_[English Version below](#english-version)_
+Die verschlüsselte Lorem Ipsum Datei befindet sich im Ordner [TestOutput].
 
-## Was wir erwarten
+Mit freundlichen Grüßen 
+Markus Leitz
 
-Wir wollen, dass ihr einen Textkodierer schreibt. Das Programm sollte eine Eingabedatei einlesen und den kodierten Text in eine Ausgabedatei schreiben. Der Programmaufruf sollte so aussehen:
+##Benutzte Klassen
+-  ReadFileClass   		(Liest Dateien ein und Speichert deren Inhalt in einem String Attribut)
+-  DecoderClass			(Verschlueselt einen String um mittels vorgebener Methode und Speichert ihn in Objekt Attribut)
+-  EncoderClass			(Entschluesselt einen String analog zu DecoderClass)
+-  EncodingCheckClass		(Kontrolliert zwei Strings auf Gleichheit)
+-  FunctionsClass			(Beinhaltet die Funktionen des Programms und stellt sie der MAIN zu verfügung)
+-  ParameterCheckClass	(Kontrolliert die an die Main übergebenen Parameter auf Fehleingaben und setzt den ausgewählten Programmmodus)
+-  WriteFileClass			(Schreibt den übergeben String in eine Datei deren Pfad übergeben wurde)
 
-    encoder input.txt output.txt
+##Integrierte Funktionen und Aufrufe
+-  Hilfs Modus (Gibt Hilfsmenü für Benutzer aus)
 
-Ihr solltet in der Lage sein, die Kodierung anhand der Eingabedateien in [input](/input/) und der zugehörigen Ausgabedateien in [output](/output/) zu erraten. Das Namensschema der Dateien ist einfach gehalten ;)
+<code>[PROGRAMMNAME] -h</code>
+-  Encoder Modus (Verschlüsselt den Inhalt der Quelldatei und Speichert in in der Zieldatei.)
 
-## Was kann man gewinnen
-  
- Wir werden der (unserer Meinung nach) besten Einsendung ein [iPad mini Wi-Fi 16GB](http://www.apple.com/de/ipad-mini/overview/) überreichen. Da gut immer relativ ist, hier einen kleinen Einblick in das was wir als gut erachten. Wir mögen leserliche, elegante, getestete Software. Wir mögen automatische Buildsysteme. Wir mögen [git](http://git-scm.com).
+<code>[PROGRAMMNAME] [QUELLDATEI] [ZIELDATEI]</code>
+-  Decoder Modus (Entschlüsselt analag zu Encodermodus.)
 
-## Wie nimmt man teil
+<code>[PROGRAMMNAME] -d [QUELLDATEI] [ZIELDATEI]</code>
+-  Encoder Test Modus (Verschlüsselt den Inhalt der Quelldatei und vergleicht ihn mit der Vorlagendatei. MIT oder OHNE Ausgabedatei.)
 
-Einsendeschluss ist **Mitternacht des 23. Juni 2013**.  
-  
-Um eine Lösung abzugeben, macht entweder hier auf [Github](https://github.com/consistec/connect2013) einen Pull-Request auf oder schickt uns eine E-Mail (mit einem einzigen gepackten tar oder zip Anhang) an [htw2013@consistec.de](mailto:htw2013@consistec.de). 
-  
-Die Beispieldateien und diese Readme-Datei findet ihr [hier](https://github.com/consistec/connect2013/archive/master.zip).   
-  
-Eure Lösung muss enthalten:
+<code>[PROGRAMMNAME] -t [QUELLDATEI] [VORLAGENDATEI]</code>
+<code>[PROGRAMMNAME] -t [QUELLDATEI] [ZIELDATEI] [VORLAGENDATEI]</code>
+-  Check Modus (Vergleicht zwei Dateien auf Gleichheit.)
 
--  den kompletten Code um das Binary zu kompilieren
--  eine Art Skript mit dem man das Binary automatisch bauen kann (sowas wie make, ant, maven, rake, etc.)
--  die Ausgabedatei eures encoders aus der Eingabe [lorem_ipsum.txt](/input/lorem_ipsum.txt)
--  anderer Code der geschrieben wurde um die Implementierung zu unterstützen (sowas wie _Tests_)
--  eine Readme-Datei in der steht wie der Code zu kompilieren ist und mit euren **Kontaktinformationen** (E-Mail oder so)
+<code>[PROGRAMMNAME] -c [VERGLEICHSDATEI] [VORLAGENDATEI]</code>
 
-Was wir nicht fordern:
+##Kompilierung des Programms
+> Zuerst sollte man sich im gleichen Ordner befinden wie das Makefile: 
+  Falls nicht mit:
 
--  eine bestimmte Programmiersprache
--  ein kompiliertes Binary
-  
-____
-#### English Version
+```
+cd src
+```
+>in Quellcode Ordner wechseln.
 
-# HTW Connect Programming Contest
-  
-## What we expect
+###Kompilieren des Programms:
+```
+make all
+```
 
-We want you to write a text encoder. The program should read an input file and write the encoded content to an output file. The program call should look something like:
+###Löschen der Objektdateien und der ausführbaren Datei
+```
+make clean
+```
 
-    encoder input.txt output.txt
+##Testen der Verschlüsselung
+Zum Testen der Verschlüsselung gibt es 2 Möglichkeiten:
 
-You should be able to guess the encoding with help of the input files in the directory [input](/input/) and the corresponding output files in [output](/output/). The naming schema of these files is easy ;)
+1.  Datei Encoden und mit Check-Modus mit Vorlagendatei vergleichen.
+2.  Datei im Test-Modus Encoden und mit Vorlagendatei vergleichen.
 
-## What you can win
+##Abgefangen Fehler
 
-We will reward the best submission (as seen by us) with an [iPad mini Wi-Fi 16GB](http://www.apple.com/ipad-mini/overview/). Since good is always a matter of taste, we want to let you know some things we like in good software. We like readable, elegant, tested software. We like automated builds. We like [git](http://git-scm.com).
+-  Zu viele Parameter angeben
+-  zu wenig Parameter angeben
+-  Datei ist nicht vorhanden
+-  Datei ist leer
 
-## How to participate
+###Nicht abgefangen
+Das Programm liest auch Dateien die nicht im *.txt Format vorliegen.
 
-Submissions are taken in to account until **Midnight June, 23rd 2013**.  
-  
-In order to submit your solution either send us a pull request here on [Github](https://github.com/consistec/connect2013) or send us an email (with a single packaged tar or zip attachment) to [htw2013@consistec.de](mailto:htw2013@consistec.de).  
-  
-You can download the example files and this readme from [here](https://github.com/consistec/connect2013/archive/master.zip).  
-  
-Your solution should contain:
+##Dokumentation
+Für die Dokumentation wurde Doxygen verwendet. Das Doxyfile liegt bei und ist so eingestellt dass die Dokumentation im Ordner
+>Doku 
 
--  the complete code needed to compile the encoder binary
--  some kind of script used to automatically build the binary (like make, ant, maven, rake, etc.)
--  the output from your encoder based on the [lorem_ipsum.txt](/input/lorem_ipsum.txt) file
--  all other code you wrote supporting the implementation (read _tests_)
--  a readme on how to compile the binary **with a way to contact you** (email or something)  
-  
-What we do not require:
+im HTML Format erstellt wird.
 
--  a certain programming language
--  a compiled binary
+##Kontaktdaten
+Markus Leitz
+
+m.leitz@freenet.de
+
+ 
