@@ -7,7 +7,7 @@
 Ich hoffe, die 3 Dateien ([encoder.properties](/encoder.properties), [encoder.xml](/encoder.xml) und [module_encoder.xml](/module_encoder.xml)) entsprechen dem, was ihr erwartet. Buildsysteme hatten wir leider noch nicht in der Uni...
 
 # Ausgabedatei
-Die Ausgabedatei von [lorem_ipsum.txt](/input/lorem_ipsum.txt) ist [output_lorem_ipsum.txt](/output/lorem_ipsum.txt) im Ordner [output](/output/).
+Die Ausgabedatei von [lorem_ipsum.txt](/input/lorem_ipsum.txt) ist [output_lorem_ipsum.txt](/output/output_lorem_ipsum.txt) im Ordner [output](/output/).
 
 # Tests
 Die Unit-Tests liegen im Ordner [tests](/tests/).
