@@ -1,7 +1,6 @@
 # Kompilieren
 1. In das Verzeichnis src wechseln
-2. javac de.timkraut.consistec_programming_contest/*.java (Unix) bzw.
-   javac de.timkraut.consistec_programming_contest\*.java (Windows)
+2. javac de/timkraut/consistec_programming_contest/*.java ausführen.
 
 # Build-Skript: Ant
 Ich hoffe, die 3 Dateien ([encoder.properties](/encoder.properties), [encoder.xml](/encoder.xml) und [module_encoder.xml](/module_encoder.xml)) entsprechen dem, was ihr erwartet. Buildsysteme hatten wir leider noch nicht in der Uni...
