@@ -2,13 +2,13 @@
 
 ###Uebersetzen des Programms###
 
-Um das Programm zu Uebersetzen muss [Maven][] auf dem System installiert sein.
+Um das Programm zu uebersetzen muss [Maven][] auf dem System installiert sein.
 
 1. Zum Quellcode navigieren:
 
 		cd /path/to/src/folder
 
-2. Das Projekt "bauen"
+2. Das Projekt "bauen":
 	
 		mvn clean package
 
@@ -16,7 +16,7 @@ Maven laedt nun die benoetigten Bibliotheken herunter und generiert eine JAR-Dat
 
 ###Ausfuehren des Programms###
 
-Das Programm kann nach dem kompilieren wie folgt ausgefuehrt werden:
+Das Programm kann nach dem Kompilieren wie folgt ausgefuehrt werden:
 
 	java -jar encoder.jar inputFile.txt outputFile.txt
 
@@ -27,11 +27,11 @@ Das Programm kann nach dem kompilieren wie folgt ausgefuehrt werden:
 		cd /path/to/src/folder
 		mvn test
 
-* Als Eingabedatei koennen (mit Absicht) nur Dateien im ASCII-Format genutzt werden, da nur fuer diese eine Codierung vorgegeben wurde. 
+* Als Eingabedateien koennen (mit Absicht) nur Dateien im ASCII-Format genutzt werden, da nur fuer diese eine Codierung vorgegeben wurde. 
 
 ###Kontakt###
 
-Name: André Schommer  
+Name: AndrÃ© Schommer  
 EMail: [andre.schommer@googlemail.com](mailto:andre.schommer@googlemail.com)
 
  [Maven]: <http://maven.apache.org/download.cgi> "Maven Download Page"
