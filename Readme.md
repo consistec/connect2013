@@ -65,7 +65,3 @@ dass die Verschluesselung nicht erfolgreich war.
 Die Ausgabe von lorem_ipsum befindet sich unter src/result.
 
 
-Konatkt:
-Moritz Fey
-e-Mail: moritz.fey@gmail.com
-
